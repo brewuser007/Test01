@@ -22,7 +22,7 @@ class Bazel < Formula
   bottle :unneeded
 
   def install
-    chmod 0555, "bazel-#{version}-installer-darwin-x86_64.sh"
+    chmod 0777, "bazel-#{version}-installer-darwin-x86_64.sh"
     system "./bazel-#{version}-installer-darwin-x86_64.sh", "--prefix=#{buildpath}"
     bin.install "lib/bazel/bin/bazel" => "bazel"
     bin.install "lib/bazel/bin/bazel-real" => "bazel-real"
